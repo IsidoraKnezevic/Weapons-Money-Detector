@@ -1,0 +1,18 @@
+Total number of images: 17 
+Image 1: dolar.jpg, Tags: bill 
+Image 2: dollars-credit-cards.webp, Tags: card, bill 
+Image 3: euro.jpg, Tags: bill 
+Image 4: fen.jpg, Tags: pistol 
+Image 5: fight.jpg, Tags: pistol 
+Image 6: firearms.jpg, Tags: pistol 
+Image 7: gun-knife.jpg, Tags: pistol 
+Image 8: gun-money.jpg, Tags: pistol 
+Image 9: gun-money2.webp, Tags: No objects detected 
+Image 10: guns-knives.jpg, Tags: pistol 
+Image 11: guns2.webp, Tags: No objects detected 
+Image 12: guns3.webp, Tags: pistol 
+Image 13: knife_gun.jpg, Tags: pistol, knife 
+Image 14: knives.jpg, Tags: knife 
+Image 15: knives2.webp, Tags: No objects detected 
+Image 16: man with gun and knife.jpg, Tags: pistol, knife 
+Image 17: priroda.jpg, Tags: No objects detected 
