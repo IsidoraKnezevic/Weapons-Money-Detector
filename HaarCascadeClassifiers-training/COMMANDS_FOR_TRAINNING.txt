@@ -1,0 +1,577 @@
+CARD CLASSIFIER
+
+# generate positive samples from the annotations to get a vector file using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_createsamples.exe -info card_pos.txt -w 24 -h 24 -num 300 -vec card_pos.vec
+
+
+# output:
+
+card_pos.txt(223) : parse errorInfo file name: card_pos.txt
+Img file name: (NULL)
+Vec file name: card_pos.vec
+BG  file name: (NULL)
+Num: 300
+BG color: 0
+BG threshold: 80
+Invert: FALSE
+Max intensity deviation: 40
+Max x angle: 1.1
+Max y angle: 1.1
+Max z angle: 0.5
+Show samples: FALSE
+Width: 24
+Height: 24
+Max Scale: -1
+RNG Seed: 12345
+Create training samples from images collection...
+Done. Created 222 samples
+
+
+# train the cascade classifier model using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascades/cascade_card/ -vec card_pos.vec -bg neg.txt -numPos 200 -numNeg 200 -numStages 25 -w 24 -h 24
+
+# output:
+
+PARAMETERS:
+cascadeDirName: cascades/cascade_card/
+vecFileName: card_pos.vec
+bgFileName: neg.txt
+numPos: 200
+numNeg: 200
+numStages: 25
+precalcValBufSize[Mb] : 1024
+precalcIdxBufSize[Mb] : 1024
+acceptanceRatioBreakValue : -1
+stageType: BOOST
+featureType: HAAR
+sampleWidth: 24
+sampleHeight: 24
+boostType: GAB
+minHitRate: 0.995
+maxFalseAlarmRate: 0.5
+weightTrimRate: 0.95
+maxDepth: 1
+maxWeakCount: 100
+mode: BASIC
+Number of unique features given windowSize [24,24] : 162336
+
+
+ ...
+
+===== TRAINING 24-stage =====
+<BEGIN
+POS count : consumed   200 : 200
+NEG count : acceptanceRatio    200 : 0.000371379
+Precalculation time: 0.991
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|    0.935|
++----+---------+---------+
+|   4|        1|    0.935|
++----+---------+---------+
+|   5|        1|    0.905|
++----+---------+---------+
+|   6|        1|     0.79|
++----+---------+---------+
+|   7|        1|    0.805|
++----+---------+---------+
+|   8|        1|    0.725|
++----+---------+---------+
+|   9|        1|    0.745|
++----+---------+---------+
+|  10|        1|    0.595|
++----+---------+---------+
+|  11|        1|    0.725|
++----+---------+---------+
+|  12|        1|    0.655|
++----+---------+---------+
+|  13|        1|     0.62|
++----+---------+---------+
+|  14|        1|     0.59|
++----+---------+---------+
+|  15|        1|    0.505|
++----+---------+---------+
+|  16|        1|     0.43|
++----+---------+---------+
+END>
+Training until now has taken 0 days 0 hours 4 minutes 3 seconds.
+
+
+---------------------------------------------------------------------------------------------
+
+
+BILL CLASSIFIER
+
+# generate positive samples from the annotations to get a vector file using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_createsamples.exe -info bill_pos.txt -w 24 -h 24 -num 425 -vec bill_pos.vec
+
+#output:
+
+Info file name: bill_pos.txt
+Img file name: (NULL)
+Vec file name: bill_pos.vec
+BG  file name: (NULL)
+Num: 425
+BG color: 0
+BG threshold: 80
+Invert: FALSE
+Max intensity deviation: 40
+Max x angle: 1.1
+Max y angle: 1.1
+Max z angle: 0.5
+Show samples: FALSE
+Width: 24
+Height: 24
+Max Scale: -1
+RNG Seed: 12345
+Create training samples from images collection...
+Done. Created 425 samples
+
+
+
+
+
+# train the cascade classifier model using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascades/cascade_bill/ -vec bill_pos.vec -bg neg.txt -numPos 360 -numNeg 400 -numStages 25 -w 24 -h 24
+
+#output:
+
+PARAMETERS:
+cascadeDirName: cascades/cascade_bill/
+vecFileName: bill_pos.vec
+bgFileName: neg.txt
+numPos: 360
+numNeg: 400
+numStages: 25
+precalcValBufSize[Mb] : 1024
+precalcIdxBufSize[Mb] : 1024
+acceptanceRatioBreakValue : -1
+stageType: BOOST
+featureType: HAAR
+sampleWidth: 24
+sampleHeight: 24
+boostType: GAB
+minHitRate: 0.995
+maxFalseAlarmRate: 0.5
+weightTrimRate: 0.95
+maxDepth: 1
+maxWeakCount: 100
+mode: BASIC
+Number of unique features given windowSize [24,24] : 162336
+
+...
+
+===== TRAINING 24-stage =====
+<BEGIN
+POS count : consumed   360 : 425
+NEG count : acceptanceRatio    400 : 0.000205688
+Precalculation time: 2.088
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|        1|
++----+---------+---------+
+|   5|        1|   0.9225|
++----+---------+---------+
+|   6|        1|    0.935|
++----+---------+---------+
+|   7|        1|     0.95|
++----+---------+---------+
+|   8|        1|   0.8325|
++----+---------+---------+
+|   9| 0.997222|     0.81|
++----+---------+---------+
+|  10| 0.997222|     0.78|
++----+---------+---------+
+|  11| 0.997222|   0.8075|
++----+---------+---------+
+|  12| 0.997222|   0.7875|
++----+---------+---------+
+|  13| 0.997222|     0.79|
++----+---------+---------+
+|  14| 0.997222|   0.7425|
++----+---------+---------+
+|  15| 0.997222|   0.7275|
++----+---------+---------+
+|  16| 0.997222|   0.7175|
++----+---------+---------+
+|  17| 0.997222|     0.77|
++----+---------+---------+
+|  18| 0.997222|     0.72|
++----+---------+---------+
+|  19| 0.997222|   0.6375|
++----+---------+---------+
+|  20| 0.997222|    0.605|
++----+---------+---------+
+|  21| 0.997222|     0.65|
++----+---------+---------+
+|  22| 0.997222|   0.6275|
++----+---------+---------+
+|  23| 0.997222|   0.5225|
++----+---------+---------+
+|  24| 0.997222|   0.4825|
++----+---------+---------+
+END>
+Training until now has taken 0 days 0 hours 10 minutes 55 seconds.
+
+
+
+-----------------------------------------------------------------------------------------------
+
+
+KNIFE CLASSIFIER
+
+
+# generate positive samples from the annotations to get a vector file using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_createsamples.exe -info knife_pos.txt -w 24 -h 24 -num 700 -vec knife_pos.vec
+
+#output: 
+
+knife_pos.txt(622) : parse errorInfo file name: knife_pos.txt
+Img file name: (NULL)
+Vec file name: knife_pos.vec
+BG  file name: (NULL)
+Num: 700
+BG color: 0
+BG threshold: 80
+Invert: FALSE
+Max intensity deviation: 40
+Max x angle: 1.1
+Max y angle: 1.1
+Max z angle: 0.5
+Show samples: FALSE
+Width: 24
+Height: 24
+Max Scale: -1
+RNG Seed: 12345
+Create training samples from images collection...
+Done. Created 621 samples
+
+
+
+# train the cascade classifier model using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascades/cascade_knife/ -vec knife_pos.vec -bg neg.txt -numPos 480 -numNeg 500 -numStages 25 -w 24 -h 24
+
+
+#output:
+
+PARAMETERS:
+cascadeDirName: cascades/cascade_knife/
+vecFileName: knife_pos.vec
+bgFileName: neg.txt
+numPos: 480
+numNeg: 500
+numStages: 25
+precalcValBufSize[Mb] : 1024
+precalcIdxBufSize[Mb] : 1024
+acceptanceRatioBreakValue : -1
+stageType: BOOST
+featureType: HAAR
+sampleWidth: 24
+sampleHeight: 24
+boostType: GAB
+minHitRate: 0.995
+maxFalseAlarmRate: 0.5
+weightTrimRate: 0.95
+maxDepth: 1
+maxWeakCount: 100
+mode: BASIC
+Number of unique features given windowSize [24,24] : 162336
+
+...
+
+===== TRAINING 24-stage =====
+<BEGIN
+POS count : consumed   480 : 584
+NEG count : acceptanceRatio    500 : 0.000405348
+Precalculation time: 2.642
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|    0.996|
++----+---------+---------+
+|   4|        1|    0.996|
++----+---------+---------+
+|   5|        1|     0.99|
++----+---------+---------+
+|   6|        1|     0.99|
++----+---------+---------+
+|   7|        1|    0.996|
++----+---------+---------+
+|   8|        1|    0.998|
++----+---------+---------+
+|   9|        1|    0.998|
++----+---------+---------+
+|  10|        1|    0.998|
++----+---------+---------+
+|  11|        1|    0.998|
++----+---------+---------+
+|  12|        1|    0.998|
++----+---------+---------+
+|  13|        1|    0.998|
++----+---------+---------+
+|  14|        1|        1|
++----+---------+---------+
+|  15| 0.995833|    0.936|
++----+---------+---------+
+|  16| 0.995833|     0.94|
++----+---------+---------+
+|  17| 0.997917|    0.914|
++----+---------+---------+
+|  18| 0.995833|    0.874|
++----+---------+---------+
+|  19| 0.995833|    0.866|
++----+---------+---------+
+|  20| 0.995833|    0.824|
++----+---------+---------+
+|  21| 0.995833|    0.836|
++----+---------+---------+
+|  22| 0.995833|    0.812|
++----+---------+---------+
+|  23| 0.995833|    0.836|
++----+---------+---------+
+|  24| 0.995833|    0.836|
++----+---------+---------+
+|  25| 0.995833|    0.798|
++----+---------+---------+
+|  26| 0.995833|     0.78|
++----+---------+---------+
+|  27| 0.995833|     0.77|
++----+---------+---------+
+|  28| 0.995833|    0.706|
++----+---------+---------+
+|  29| 0.995833|     0.69|
++----+---------+---------+
+|  30| 0.995833|    0.724|
++----+---------+---------+
+|  31| 0.995833|    0.688|
++----+---------+---------+
+|  32| 0.995833|    0.698|
++----+---------+---------+
+|  33| 0.995833|    0.666|
++----+---------+---------+
+|  34| 0.995833|    0.656|
++----+---------+---------+
+|  35| 0.995833|    0.672|
++----+---------+---------+
+|  36| 0.995833|    0.664|
++----+---------+---------+
+|  37| 0.995833|    0.642|
++----+---------+---------+
+|  38| 0.995833|    0.538|
++----+---------+---------+
+|  39| 0.995833|      0.5|
++----+---------+---------+
+END>
+Training until now has taken 0 days 0 hours 19 minutes 44 seconds.
+
+
+---------------------------------------------------------------------------------------------------
+
+
+PISTOL CLASSIFIER
+
+
+# generate positive samples from the annotations to get a vector file using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_createsamples.exe -info pistol_pos.txt -w 24 -h 24 -num 900 -vec pistol_pos.vec
+
+#output:
+
+pistol_pos.txt(856) : parse errorInfo file name: pistol_pos.txt
+Img file name: (NULL)
+Vec file name: pistol_pos.vec
+BG  file name: (NULL)
+Num: 900
+BG color: 0
+BG threshold: 80
+Invert: FALSE
+Max intensity deviation: 40
+Max x angle: 1.1
+Max y angle: 1.1
+Max z angle: 0.5
+Show samples: FALSE
+Width: 24
+Height: 24
+Max Scale: -1
+RNG Seed: 12345
+Create training samples from images collection...
+Done. Created 855 samples
+
+
+
+# train the cascade classifier model using:
+C:/Users/Korisnik/Desktop/CascadeClassifiers/opencv/build/x64/vc15/bin/opencv_traincascade.exe -data cascades/cascade_pistol/ -vec pistol_pos.vec -bg neg.txt -numPos 750 -numNeg 800 -numStages 25 -w 24 -h 24
+
+
+#output:
+
+PARAMETERS:
+cascadeDirName: cascades/cascade_pistol/
+vecFileName: pistol_pos.vec
+bgFileName: neg.txt
+numPos: 750
+numNeg: 800
+numStages: 25
+precalcValBufSize[Mb] : 1024
+precalcIdxBufSize[Mb] : 1024
+acceptanceRatioBreakValue : -1
+stageType: BOOST
+featureType: HAAR
+sampleWidth: 24
+sampleHeight: 24
+boostType: GAB
+minHitRate: 0.995
+maxFalseAlarmRate: 0.5
+weightTrimRate: 0.95
+maxDepth: 1
+maxWeakCount: 100
+mode: BASIC
+Number of unique features given windowSize [24,24] : 162336
+
+
+
+...
+
+===== TRAINING 24-stage =====
+<BEGIN
+POS count : consumed   750 : 853
+NEG count : acceptanceRatio    800 : 9.11383e-05
+Precalculation time: 4.666
++----+---------+---------+
+|  N |    HR   |    FA   |
++----+---------+---------+
+|   1|        1|        1|
++----+---------+---------+
+|   2|        1|        1|
++----+---------+---------+
+|   3|        1|        1|
++----+---------+---------+
+|   4|        1|        1|
++----+---------+---------+
+|   5| 0.998667|   0.9975|
++----+---------+---------+
+|   6| 0.998667|  0.99125|
++----+---------+---------+
+|   7| 0.998667|  0.98875|
++----+---------+---------+
+|   8| 0.998667|    0.995|
++----+---------+---------+
+|   9|    0.996|  0.98875|
++----+---------+---------+
+|  10|    0.996|     0.99|
++----+---------+---------+
+|  11|    0.996|   0.9725|
++----+---------+---------+
+|  12| 0.997333|   0.9775|
++----+---------+---------+
+|  13|    0.996|  0.96625|
++----+---------+---------+
+|  14| 0.997333|   0.9525|
++----+---------+---------+
+|  15|    0.996|    0.975|
++----+---------+---------+
+|  16|    0.996|  0.93625|
++----+---------+---------+
+|  17|    0.996|  0.91125|
++----+---------+---------+
+|  18|    0.996|    0.875|
++----+---------+---------+
+|  19|    0.996|      0.9|
++----+---------+---------+
+|  20|    0.996|  0.86625|
++----+---------+---------+
+|  21|    0.996|   0.8825|
++----+---------+---------+
+|  22|    0.996|  0.85875|
++----+---------+---------+
+|  23|    0.996|  0.88875|
++----+---------+---------+
+|  24|    0.996|     0.89|
++----+---------+---------+
+|  25|    0.996|     0.87|
++----+---------+---------+
+|  26|    0.996|    0.805|
++----+---------+---------+
+|  27|    0.996|  0.78125|
++----+---------+---------+
+|  28|    0.996|    0.775|
++----+---------+---------+
+|  29|    0.996|  0.77625|
++----+---------+---------+
+|  30|    0.996|     0.79|
++----+---------+---------+
+|  31|    0.996|  0.75375|
++----+---------+---------+
+|  32|    0.996|   0.7575|
++----+---------+---------+
+|  33|    0.996|    0.805|
++----+---------+---------+
+|  34|    0.996|   0.7725|
++----+---------+---------+
+|  35|    0.996|     0.79|
++----+---------+---------+
+|  36|    0.996|  0.79375|
++----+---------+---------+
+|  37|    0.996|  0.76875|
++----+---------+---------+
+|  38|    0.996|   0.7425|
++----+---------+---------+
+|  39|    0.996|   0.7125|
++----+---------+---------+
+|  40|    0.996|  0.68375|
++----+---------+---------+
+|  41|    0.996|  0.71625|
++----+---------+---------+
+|  42|    0.996|    0.695|
++----+---------+---------+
+|  43|    0.996|  0.67375|
++----+---------+---------+
+|  44|    0.996|   0.6925|
++----+---------+---------+
+|  45|    0.996|  0.64875|
++----+---------+---------+
+|  46|    0.996|  0.69625|
++----+---------+---------+
+|  47|    0.996|  0.64375|
++----+---------+---------+
+|  48|    0.996|     0.63|
++----+---------+---------+
+|  49|    0.996|  0.62375|
++----+---------+---------+
+|  50|    0.996|   0.5425|
++----+---------+---------+
+|  51|    0.996|   0.5775|
++----+---------+---------+
+|  52|    0.996|    0.545|
++----+---------+---------+
+|  53|    0.996|  0.58625|
++----+---------+---------+
+|  54|    0.996|  0.53875|
++----+---------+---------+
+|  55|    0.996|     0.52|
++----+---------+---------+
+|  56|    0.996|     0.53|
++----+---------+---------+
+|  57|    0.996|  0.50375|
++----+---------+---------+
+|  58|    0.996|   0.4825|
++----+---------+---------+
+END>
+Training until now has taken 0 days 0 hours 43 minutes 37 seconds.
+
+
